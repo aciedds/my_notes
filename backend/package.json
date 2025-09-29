@@ -1,7 +1,6 @@
 {
   "name": "backend",
   "module": "main.ts",
-  "type": "module",
   "scripts": {
     "start": "tsx ./src/main.ts",
     "start:dev": "tsx watch ./src/main.ts",

@@ -16,3 +16,17 @@ export async function createNoteApi(title: string, body: string): Promise<Note> 
   const response = await apiClient.post('/notes', { title, body });
   return response.data;
 }
+
+export async function editNoteApi(id: string, title: string, body: string): Promise<Note> {
+  const response = await apiClient.put(`/notes/${id}`, { title, body });
+  return response.data;
+}
+
+export async function deleteNoteApi(id: string): Promise<void> {
+  await apiClient.delete(`/notes/${id}`);
+}
+
+export async function getNoteByIdApi(id: string): Promise<Note | null> {
+  const response = await apiClient.get(`/notes/${id}`);
+  return response.data;
+}
